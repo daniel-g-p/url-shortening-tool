@@ -1,0 +1,618 @@
+/* General Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font: 500 16px/1.75 "Poppins", sans-serif;
+    color: hsl(0, 0%, 75%);
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    overflow-x: hidden;
+    background-color: hsl(0, 0%, 95%);
+}
+
+header,
+section {
+    width: 85%;
+    margin: 0 auto;
+}
+
+h1 {
+    font: 700 2.25rem/1.25 "Poppins", sans-serif;
+    color: hsl(257, 27%, 26%);
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font: 700 1.5rem/1.25 "Poppins", sans-serif;
+    color: hsl(257, 27%, 26%);
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font: 700 1.25rem/1.25 "Poppins", sans-serif;
+    color: hsl(257, 27%, 26%);
+    margin-bottom: 0.5rem;
+}
+
+h4 {
+    font: 700 1rem/1.25 "Poppins", sans-serif;
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 1rem;
+    transition: color 0.25s ease;
+}
+
+a {
+    text-decoration: none;
+    color: hsl(0, 0%, 75%);
+}
+
+button {
+    font: 700 1rem/1 "Poppins", sans-serif;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(180, 66%, 49%);
+    padding: 1em 2em;
+    border: none;
+    border-radius: 0.25em;
+    outline: none;
+    transition: background-color 0.25s ease;
+}
+
+button:hover {
+    background-color: hsl(180, 66%, 75%);
+    cursor: pointer;
+}
+
+.mainButton {
+    border-radius: 1.5em;
+}
+
+form,
+.shortenedLink,
+.feature {
+    box-shadow: 0 0 1rem hsl(0, 0%, 92.5%);
+}
+
+
+/* Header Section (Mobile) */
+
+header {
+    margin: 3rem auto;
+}
+
+.topRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.navToggle path {
+    transform: scale(2);
+    transition: fill 0.5s ease;
+}
+
+
+/* Header Section (Desktop) */
+
+#desktopLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#desktopLogin,
+#desktopLinks>div {
+    display: none;
+}
+
+#desktopLinks>div {
+    margin-left: 1rem;
+}
+
+#desktopLinks h4 {
+    margin: 0;
+    color: hsl(0, 0%, 75%);
+}
+
+#desktopLinks .category {
+    margin: 0 1rem 0;
+}
+
+#desktopLinks .category>div {
+    position: absolute;
+}
+
+#desktopLogin {
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#desktopLogin a {
+    font: 700 1rem/1.25 "Poppins", sans-serif;
+    margin-right: 1rem;
+    transition: color 0.25s ease;
+}
+
+#desktopLogin a:hover,
+#desktopLinks h4:hover {
+    color: hsl(257, 27%, 26%);
+    cursor: pointer;
+}
+
+
+/* Intro Section */
+
+#intro {
+    margin-bottom: 6rem;
+}
+
+#heroImage {
+    width: 100%;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+#heroImage img {
+    width: 150%;
+    margin-right: -50%;
+}
+
+#intro button {
+    margin-top: 1.5rem;
+}
+
+
+/* Shortening Tool Section */
+
+#shorteningTool {
+    scroll-margin-top: 3rem;
+}
+
+form {
+    width: 100%;
+    background-color: hsl(257, 27%, 26%);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    background-image: url("resources/bg-shorten-mobile.svg");
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+form input,
+form button {
+    width: 100%;
+    height: 3rem;
+}
+
+form input {
+    font: 500 1rem/1 "Poppins", sans-serif;
+    color: hsl(257, 27%, 26%);
+    background-color: hsl(0, 0%, 100%);
+    padding: 1em;
+    outline: none;
+    border-radius: 0.25em;
+    border: 3px solid hsl(0, 0%, 100%);
+    transition: border-color 0.25s ease;
+}
+
+form input:focus {
+    border-color: hsl(180, 66%, 49%);
+}
+
+#userInput {
+    position: relative;
+}
+
+#userInput::after {
+    display: block;
+    content: "Please add a valid URL";
+    font-size: 0.75rem;
+    font-style: italic;
+    color: hsl(0, 87%, 67%);
+    text-align: left;
+    margin: 0.25rem 0 1rem;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: height, opacity;
+    transition-duration: 0.25s;
+    transition-timing-function: ease;
+}
+
+#userInput.error input {
+    border-color: hsl(0, 87%, 67%);
+}
+
+#userInput.error::after {
+    height: 0.75rem;
+    opacity: 1;
+}
+
+
+/* Link List Section */
+
+#linkList {
+    padding-bottom: 6rem;
+    display: block;
+}
+
+#allLinks {
+    overflow-y: hidden;
+    transition-property: height, opacity;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+
+.shortenedLink {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.5rem;
+    text-align: left;
+    overflow-y: hidden;
+    margin-top: 1.5rem;
+    transition: all 0.75s ease;
+    pointer-events: all;
+}
+
+.shortenedLink.loading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.output {
+    position: relative;
+    display: inherit;
+    flex-direction: column;
+    transition: opacity 1s ease;
+    pointer-events: all;
+}
+
+.output.loading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.oldLink {
+    word-break: break-all;
+    color: hsl(257, 27%, 26%);
+    padding: 1em;
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+.newLink {
+    color: hsl(180, 66%, 49%);
+    padding: 1em;
+}
+
+.shortenedLink button {
+    padding: 0.75em 2em;
+    margin: 0 1rem 1rem;
+}
+
+.shortenedLink button.copied {
+    background-color: hsl(257, 27%, 26%);
+}
+
+button.copied:hover {
+    background-color: hsla(257, 27%, 26%, 0.9);
+}
+
+.loader {
+    position: absolute;
+    bottom: 3rem;
+    left: 1rem;
+    display: block;
+    width: calc(100% - 2rem);
+    height: 1rem;
+    background-color: hsl(0, 0%, 95%);
+    border-radius: 0.5rem;
+    transition: opacity 0.5s ease;
+}
+
+.loader div {
+    display: block;
+    background-color: hsl(180, 66%, 49%);
+    margin-left: 0;
+    width: 20%;
+    height: 1rem;
+    border-radius: 0.5rem;
+    transition: margin-left 1s ease-in-out;
+}
+
+.loader.right div {
+    margin-left: 80%;
+}
+
+.loading {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#clearLinks {
+    border: 3px solid hsl(257, 27%, 26%);
+    color: hsl(257, 27%, 26%);
+    background: none;
+    margin-top: 1.5rem;
+    transition: all 0.5s ease;
+    pointer-events: all;
+}
+
+#clearLinks.inactive {
+    opacity: 0.25;
+    pointer-events: none;
+}
+
+#clearLinks:hover {
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(257, 27%, 26%);
+}
+
+
+/* Features Section */
+
+#allFeatures {
+    margin: 3rem 0 6rem;
+    position: relative;
+}
+
+.feature {
+    position: relative;
+    z-index: 1;
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 0.5rem;
+    margin-top: 5rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.icon {
+    background-color: hsl(257, 27%, 26%);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    margin: -72px auto 24px;
+    display: flex;
+}
+
+.icon img {
+    margin: 20px;
+}
+
+#connector {
+    z-index: 0;
+    position: absolute;
+    display: block;
+    width: 0.5rem;
+    height: 100%;
+    background-color: hsl(180, 66%, 49%);
+    top: 0;
+    left: calc(50% - 0.25rem);
+}
+
+
+/* CTA Section */
+
+#cta {
+    width: 100%;
+    padding: 6rem 7.5%;
+    color: hsl(0, 0%, 100%);
+    background-color: hsl(257, 27%, 26%);
+    background-image: url("resources/bg-boost-mobile.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: right top;
+}
+
+#cta h2 {
+    color: hsl(0, 0%, 100%);
+}
+
+
+/* Footer Section */
+
+footer {
+    width: 100%;
+    padding: 3rem 7.5%;
+    background-color: hsl(260, 8%, 14%);
+}
+
+.category {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+footer .logo {
+    margin-bottom: 2rem;
+}
+
+footer a {
+    margin-bottom: 0.5rem;
+    transition: color 0.25s ease;
+}
+
+footer a:hover {
+    color: hsl(180, 66%, 49%);
+}
+
+#social {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+#social a {
+    margin: 0 0.75rem;
+}
+
+#social a path {
+    transition: fill 0.25s ease;
+}
+
+#social a:hover path {
+    fill: hsl(180, 66%, 49%);
+}
+
+
+/* Mobile Navigation Menu */
+
+.navToggle.active path {
+    fill: hsl(180, 66%, 49%);
+}
+
+#mobileNav {
+    background-color: hsl(257, 27%, 26%);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition-property: max-height, opacity;
+    transition-timing-function: ease;
+}
+
+#mobileNav .container {
+    margin: 3rem 1.5rem;
+}
+
+#mobileNav .category a {
+    margin-top: 0.5rem;
+}
+
+#mobileNav .category a:hover {
+    color: hsl(0, 0%, 100%);
+}
+
+.category>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none;
+    transition: max-height 0.5s ease;
+}
+
+.category.active>div {
+    pointer-events: all;
+}
+
+.category.active h4 {
+    color: hsl(180, 66%, 49%);
+}
+
+#mobileNav h4 {
+    margin-bottom: 0.25rem;
+}
+
+#login {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-top: 1px solid hsl(0, 0%, 50%);
+}
+
+#login a {
+    margin-bottom: 1.5rem;
+    padding-top: 1.5rem;
+    font: 700 1rem/1.25 "Poppins", sans-serif;
+    color: hsl(0, 0%, 100%);
+    transition: color 0.25s ease;
+}
+
+#login a:hover {
+    color: hsl(180, 66%, 49%);
+}
+
+#mobileNav.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+@media (min-width: 800px) {
+    #desktopLinks>div,
+    #desktopLogin {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    #mobileNav,
+    .navToggle {
+        display: none;
+    }
+    #intro {
+        width: 85%;
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    #intro>div {
+        width: 60%;
+    }
+    #heroImage img {
+        width: 100%;
+        max-width: 480px;
+        margin-right: 0;
+    }
+    #intro .text {
+        padding-right: 3rem;
+    }
+    header {
+        margin-bottom: 6rem;
+    }
+    form {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    #userInput {
+        width: 250%;
+        margin-right: 1.5rem;
+    }
+    footer {
+        text-align: left;
+    }
+    footer nav {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    footer .category {
+        align-items: flex-start;
+        margin-right: 6rem;
+    }
+    #social {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    #social svg {
+        margin-bottom: 0.5rem;
+    }
+}
