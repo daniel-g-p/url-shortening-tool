@@ -1,6 +1,6 @@
 # Shortly - URL Shortening Tool
 
-![Shortly](https://github.com/daniel-g-p/url-shortening-tool/blob/master/cover_image.PNG)
+![Shortly](https://github.com/daniel-g-p/url-shortening-tool/blob/main/cover_image.PNG)
 
 Shortly is a simple web application that can be used to shorten and save URLs. It is based on a challenge from [Frontend Mentor](https://www.frontendmentor.io/challenges/url-shortening-api-landing-page-2ce3ob-G) and makes use of the free [Shrtcode API](https://shrtco.de/docs). The live site can be accessed [here](https://url-shortening-tool-daniel-g-p.vercel.app/).
 
