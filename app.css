@@ -161,6 +161,7 @@ header {
 #heroImage {
     width: 100%;
     margin-bottom: 3rem;
+    margin-right: -3rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -574,6 +575,9 @@ footer a:hover {
     }
     #intro>div {
         width: 60%;
+    }
+    #heroImage {
+        margin-right: auto;
     }
     #heroImage img {
         width: 100%;
