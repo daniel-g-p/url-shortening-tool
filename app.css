@@ -16,13 +16,13 @@ body {
     margin: 0 auto;
     text-align: center;
     overflow-x: hidden;
-    background-color: hsl(0, 0%, 97.5%);
+    background-color: hsl(0, 0%, 95%);
 }
 
 header,
 section {
-    width: 85%;
-    margin: 0 auto;
+    width: 100%;
+    padding: 0 1.5rem;
 }
 
 h1 {
@@ -159,9 +159,9 @@ header {
 }
 
 #heroImage {
-    width: 100%;
+    width: calc(100% + 1.5rem);
     margin-bottom: 3rem;
-    margin-right: -3rem;
+    margin-right: -1.5rem;
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -553,6 +553,11 @@ footer a:hover {
 }
 
 @media (min-width: 800px) {
+    section,
+    header {
+        width: 85%;
+        margin-inline: auto;
+    }
     #desktopLinks>div,
     #desktopLogin {
         display: flex;
@@ -575,9 +580,6 @@ footer a:hover {
     }
     #intro>div {
         width: 60%;
-    }
-    #heroImage {
-        margin-right: auto;
     }
     #heroImage img {
         width: 100%;
